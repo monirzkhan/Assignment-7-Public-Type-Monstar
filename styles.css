@@ -151,9 +151,10 @@ button {
 #histories {
   
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   row-gap: 10px;
   column-gap: 10px;
+  padding: 10px;
 }
 
 .card {
@@ -198,11 +199,17 @@ button {
   .card {
     flex-direction: column;
   }
-     #histories {
-       display: grid;
-       grid-template-columns: repeat(1, 1fr);
-       row-gap: 10px;
-       column-gap: 10px;
+  #histories {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  row-gap: 10px;
+  column-gap: 10px;
+  
+  }
+  #display{
+    font-size: 24px;
+    white-space: nowrap;
+  }
 }
 
 @media only screen and (min-width:689px) and (max-width:991px)  {
