@@ -141,6 +141,11 @@ button {
   cursor: pointer;
 }
 
+/* #histories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+} */
 #histories {
   display: flex;
   flex-wrap: wrap;
@@ -181,12 +186,22 @@ button {
   top: 0;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 688px) {
   .box-container {
     padding: 0 20px;
     width: 100%;
   }
   .card {
     flex-direction: column;
+  }
+}
+
+@media only screen and (min-width:689px) and (max-width:991px)  {
+  #histories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 30px;
+    column-gap: 60px;
+    
   }
 }
