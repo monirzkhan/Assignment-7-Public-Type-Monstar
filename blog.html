@@ -69,35 +69,49 @@
                 </div>
                 <div class="mt-5">
                     
-                    <h3 class="text-danger">Question-02: What is The Difference Between Regular Functions and Arrow Functions?</h3>
+                    <h3 class="text-danger">Question-02: What is The Difference Between JavaScript Global Scope and Block Scope?</h3>
                     <hr>
-                    <b class="text-success my-3">Answer: The Difference Between Regular Functions and Arrow Functions.</b>
-                    <p>Arrow function — also called fat arrow function— is a new feature introduced in ES6 that is a more concise syntax for
-                    writing function expressions. While both regular JavaScript functions and arrow functions work in a similar manner,
-                    there are certain differences between them.</p>
+                    <b class="text-success my-3">Answer: The Difference Between JavaScript Global Scope and Block Scope.</b>
+                    <h2>Variable Scope in JavaScript</h2>
+                    <p>In JavaScript, there are 3 types of variable scope, namely:</p>
+                    <div id="cls-video-container-5Dm6bvSz" class="adthrive" style="min-height: 463.5px;">
+                        <div></div>
+                    </div>
+                    <div id="AdThrive_Content_1_desktop" class="adthrive-ad adthrive-content adthrive-content-1" style="min-height: 250px;">
+                    </div>
+                    <ul>
+                        <li>Global Scope</li>
+                        <li>Function Scope</li>
+                        <li>Block Scope</li>
+                    </ul>
+                    <p>Although, there used to be only two types of scopes before <strong>ES6</strong>, the global scope, and the local
+                        scope. But, with ES6 local scope was broken down into function scope and block scope.</p>
+                    <p>Let’s start with the global scope first.</p>
+                    <h2>Global Scope</h2>
+                    <p>The variables defined outside of any <strong>function</strong> or <strong>curly </strong>brackets are known as global
+                        variables and have global scope. Global scope means that the variables can be accessed from any part of that
+                        program, any function or conditional state can access that variable.</p>
 
-                    <p><b>1. Syntax:</b>
-                    The arrow function example above allows a developer to accomplish the same result with fewer lines of code and
-                    approximately half the typing.
-                    
-                    Curly brackets aren’t required if only one expression is present. The above example can also be written like this:</p>
-                    <p><b>2. Arguments binding</b>
-                    Arrow functions do not have an arguments binding. However, they have access to the arguments object of the closest
-                    non-arrow parent function. Named and rest parameters are heavily relied upon to capture the arguments passed to arrow
-                    functions.</p>
-                    <p><b>3. Use of this keyword</b>
-                    Unlike regular functions, arrow functions do not have their own this. The value of this inside an arrow function remains
-                    the same throughout the lifecycle of the function and is always bound to the value of this in the closest non-arrow
-                    parent function.</p>
-                    <p><b>4. Using new keyword</b>
-                   
-                    Regular functions created using function declarations or expressions are constructible and callable. Since regular
-                    functions are constructible, they can be called using the new keyword.
-                    
-                    However, the arrow functions are only callable and not constructible, i.e arrow functions can never be used as
-                    constructor functions. Hence, they can never be invoked with the new keyword.</p>
-                    <p><b>5. No duplicate named parameters</b>
-                    Arrow functions can never have duplicate named parameters, whether in strict or non-strict mode.</p>
+                    <p><strong>Note</strong>: It is not a good practice to use global variables when they are not needed as every code block
+                        will have access to those variables.</p>
+                    <h2>Local Scope</h2>
+                    <p>If you were to define some variables inside <strong>curly brackets {}</strong> or inside a specific function then
+                        those variables are called local variables The local variables have a very confined scope which is called the local
+                        scope But, with the release of ES6, the local scope was further broken down into two different scopes:</p>
+                    <ul>
+                        <li>Function scope</li>
+                        <li>Block scope.</li>
+                    </ul>
+                    <h2>Function Scope</h2>
+                    <p>The function scope is the accessibility of the variables defined inside a function, these variables cannot be
+                        accessed from any other function or even outside the function in the main file. </p>
+                    <div id="AdThrive_Content_3_desktop" class="adthrive-ad adthrive-content adthrive-content-3" style="min-height: 250px;">
+                    </div>
+                    <h2>Block Scope</h2>
+                    <p>Block scope is also a sub-type of local scope. The block scope can be defined as the scope of the variables inside
+                        the <strong>curly brackets {}</strong>. Now, these curly brackets can be of loops, or conditional statements, or
+                        something else. You are only allowed to refer to these variables from within the <strong>curly brackets {}</strong>.
+                    </p>
                     
                 </div>
                 <div class="mt-5">

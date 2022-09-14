@@ -63,6 +63,10 @@ const validate = (key) => {
   return false;
 };
 
+window.onkeydown = function (e) {
+  return !(e.keyCode == 32);
+}
+
 // FINISHED TYPING
 const gameOver = () => {
   document.addEventListener("keydown", typeController);
