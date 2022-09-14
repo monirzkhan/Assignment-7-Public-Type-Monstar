@@ -116,21 +116,59 @@
                 </div>
                 <div class="mt-5">
                     
-                    <h3 class="text-danger">Question-03: What is The Difference Between map(), foreach(), filter() and find()??</h3>
+                    <h3 class="text-danger">Question-03: How JavaScript Event Loop works??</h3>
                     <hr>
-                    <b class="text-success my-3">Answer: Differences between forEach() and map() methods:</b>
+                    
 
+                    <b class="text-success my-3">Answer: How JavaScript Event Loop works:</b>
 
-                    <p>The forEach() method does not create a new array based on the given array. The map() method creates an entirely new
-                    array. The forEach() method returns “undefined“. The map() method returns the newly created array according to the
-                    provided callback function.</p>
-
-                    <b class="text-success my-3">Answer: Differences between filter() and find() methods:</b>
-
-                    <p>The filter() method is used to filters all the elements and returns the element that matches and the element that do not
-                    match are removed. The only difference is the filter() method search through all the elements while find() method search
-                    through all the child elements only</p>
+                    
+                    <p>The event loop is a process that waits for the Call Stack to be clear before pushing callbacks from the Task Queue to
+                    the Call Stack. Once the Stack is clear, the event loop triggers and checks the Task Queue for available callbacks. If
+                    there are any, it pushes it to the Call Stack, waits for the Call Stack to be clear again, and repeats the same process.</p>
                    
+                    <h3>Javascript Web APIs:</h3>
+                    <p>These are the additional functionality, that helps us perform some additional tasks which cannot be run using the
+                        main thread. However, since our JavaScript runtime is single-threaded, it can export some tasks to the WEB APIs
+                        which helps us to respond to multiple threads. Example of some web APIs are:</p>
+                        <ul>
+                            <li>DOM </li>
+                            <li>Ajax (Network requests)</li>
+                            <li>setTimeout()</li>
+                        </ul>
+                    <p>For instance, <code>setTimeout()</code> is called, the browser delegates the task to a different thread to calculate
+                        the time interval specified in the argument of the <code>setTimeout()</code> method, and once done this tread would
+                        then call the desired function in callback stack.</p>
+                        <p>Since JavaScript is single-threaded, the browser has the capability of delegating the task in multiple threads. But
+                            how does the event loop help in these executions? But now we are good to go ahead with Event Loop. </p>
+
+                    <h3>Event Loop && Event Queue:</h3>
+                    <p>Since we know that Web APIs delegate some of the tasks to different threads, on completion of these tasks, how the
+                        main or desired functions are sent to the call stack. </p>
+                        <p>Event Queue is a special queue, which keeps track of all the functions queues, which are needed to be pushed into the
+                            call stack.
+                            The event queue is responsible for sending new functions to the track for processing. The queue data structure is
+                            required to maintain the correct sequence in which all operations should be sent for execution.</p>
+
+                            <p>Let's take an example, in the following example, we are using a setTimeout function, which will log the "executed"
+                            string after 2000 milliseconds.</p>
+
+                        <pre class="grvsc-container dark-default-dark" data-language="javascript"
+                            data-index="2"><code class="grvsc-code"><span class="grvsc-line"><span class="mtk1">  </span></span>
+                        <span class="grvsc-line"><span class="mtk1">  </span><span class="mtk11">setTimeout</span><span class="mtk1">(</span><span class="mtk4">function</span><span class="mtk1">(){</span></span>
+                        <span class="grvsc-line"><span class="mtk1">    </span><span class="mtk10">console</span><span class="mtk1">.</span><span class="mtk11">log</span><span class="mtk1">(</span><span class="mtk8">"Executed"</span><span class="mtk1">;)</span></span>
+                        <span class="grvsc-line"><span class="mtk1">  }, </span><span class="mtk7">2000</span><span class="mtk1">);</span></span></code></pre>
+
+                        <p>Now when a setTimeout operation is processed in the call stack. On its execution, it calls a web API which fires a timer
+                        for 2000 milliseconds. After 2000 milliseconds has been elapsed, the web API, place the callback function of setTimeout
+                        in the event queue.</p>
+
+                        <p>Here need to mention that, just placing our function does not necessarily imply that the function will get executed.
+                        This function has to be pushed into the call stack for execution and here the event loop comes into the picture. The
+                        event loop waits for the function stack to be empty, once the call stack is empty this will push the first function from
+                        the event queue to the call stack, and in this way, the desired function will be called.</p>
+
+        
                     
                 </div>
                 <div class="mt-5">
