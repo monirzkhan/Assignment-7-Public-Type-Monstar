@@ -24,8 +24,8 @@ const typeController = (e) => {
   const newLetter = e.key;
 
   // Handle backspace press
-  if (newLetter == "Backspace") {
-    userText = userText.slice(0, userText.length - 1);
+  if (newLetter === "Backspace") {
+    userText = userText.slice(0, userText.length-1);
     return display.removeChild(display.lastChild);
   }
 
@@ -37,7 +37,10 @@ const typeController = (e) => {
   if (!validLetters.includes(newLetter)) {
     return;
   }
-
+  else {
+    errorCount = 100;
+    console.log(errorCount)
+}
   userText += newLetter;
 
   const newLetterCorrect = validate(newLetter);
@@ -46,6 +49,7 @@ const typeController = (e) => {
     display.innerHTML += `<span class="green">${newLetter === " " ? "▪" : newLetter}</span>`;
   } else {
     display.innerHTML += `<span class="red">${newLetter === " " ? "▪" : newLetter}</span>`;
+   
   }
 
   // check if given question text is equal to user typed text
@@ -63,7 +67,7 @@ const validate = (key) => {
 
 // FINISHED TYPING
 const gameOver = () => {
-  document.removeEventListener("keydown", typeController);
+  document.addEventListener("keydown", typeController);
   // the current time is the finish time
   // so total time taken is current time - start time
   const finishTime = new Date().getTime();
